@@ -4,17 +4,15 @@ import { TodoItem } from '../interfaces/todo-item';
 @Component({
   selector: 'app-todo-item',
   template: `
-  <div>
+  <div class="todo-item">
   <input type="checkbox"
           class="todo-checkbox"
          (click)="completeItem()"/>
         <span class="todo-title" [ngClass]="{'todo-complete': item.completed}">
          {{ item.title }}
        </span>
+       <button class="btn btn-red" (click)="removeItem()">remove</button>
   </div>
-  <button class="btn btn-red" (click)="removeItem()">
-      remove
-  </button>
   `,
   styleUrls: ['./todo-item.component.css']
 })
